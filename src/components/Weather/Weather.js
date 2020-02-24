@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
 
-const Weather = ({city}) => {
-    const [data, setData] = useState(false);
+
+const Weather = ({city, country}) => {
+    const [data, setData] = useState("");
 
 
     useEffect(() => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=198cd1c8a70a5ce116f0faa861a83524`)
+        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=198cd1c8a70a5ce116f0faa861a83524`)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -14,18 +15,17 @@ const Weather = ({city}) => {
             }
         })
         .then(data => {
-            setData(data.main.temp);
-            console.log(data);
+            setData(data);
         })
         .catch(err => {
-            // console.error("Pojawiły się błędy - " + err.message);
+            console.error("Pojawiły się błędy - " + err.message);
         })
-    }, [city])
-
+    }, [city, country])
 
     return (
         <h1>{data}</h1>
     )
+
 }
 
 export default Weather;

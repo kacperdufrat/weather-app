@@ -6,14 +6,21 @@ import CitySelection from '../CitySelection/CitySelection';
 
 function App() {
   const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
 
   return (
     <>
-    <p>
-      Weather app
-    </p>
-    <CitySelection setCity={setCity}/>
-    {(city !== "" )&&<Weather city={city}/>}
+      <header>
+        <p>Weather app</p>
+      </header>
+      <main>
+        <CitySelection setCity={setCity} setCountry={setCountry}/>
+        {(city !== "") && (country !== "") && <Weather city={city} country={country}/>}
+  
+      </main>
+      <footer>
+        <span>Simple weather App made in ReactJS by Kacper Dufrat</span>
+      </footer>
     </>
   );
 }

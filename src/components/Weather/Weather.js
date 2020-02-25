@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-
+import "./Weather.scss";
 
 const Weather = ({city, country}) => {
     const [data, setData] = useState(false);
@@ -27,14 +27,16 @@ const Weather = ({city, country}) => {
     }
 
     return (
-        <>
-        <h2>{data.name}, {data.sys.country}</h2>
-        <div>{new Date().toLocaleDateString()}</div>
-        <div>IKONA POGODY</div>
-        <div>{data.main.temp}°C</div>
-        <div>{data.main.temp_min}°C {data.main.temp_max}°C</div>
-        <div>HUMIDITY: {data.main.humidity}% WIND: {data.wind.speed}m/s PRESSURE: {data.main.pressure}Pa</div>
-        </>
+        <div className="weather-container">
+            <h2 className="weather-city">{data.name}, {data.sys.country}</h2>
+            <div className="weather-date">{new Date().toLocaleDateString()}</div>
+            <div className="weather-icon">IKONA POGODY</div>
+            <div className="weather-temp">{data.main.temp}°C</div>
+            <div className="weather-temp__minmax">
+                <div className="weather-temp__min">{data.main.temp_min}°C</div>
+                <div className="weather-temp__max">{data.main.temp_max}°C</div>
+            </div>
+        </div>
     )
 
 }

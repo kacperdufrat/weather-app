@@ -1,0 +1,23 @@
+.weather-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    .weather-date {
+        font-size: 1.5rem;
+    }
+    .weather-temp {
+        font-weight: 700;
+        background-color: lightblue;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+    .weather-temp__minmax {
+        font-weight: 700;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+}

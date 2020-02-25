@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./CitySelection.scss";
 
 const CitySelection = ({setCity, setCountry}) => {
     const [cityValue, setCityValue] = useState("");
@@ -20,7 +21,7 @@ const CitySelection = ({setCity, setCountry}) => {
                 type="text"
                 onChange={e => setCountryValue(e.target.value)}
                 placeholder='Country'/>
-            <button>Check weather!</button>
+            <button>Check it</button>
         </form>
     )
 }

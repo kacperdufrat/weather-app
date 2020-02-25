@@ -9,19 +9,18 @@ function App() {
   const [country, setCountry] = useState("");
 
   return (
-    <>
+    <div className="container">
       <header>
-        <p>Weather app</p>
+        <h1>Weather app</h1>
       </header>
       <main>
         <CitySelection setCity={setCity} setCountry={setCountry}/>
         {(city !== "") && (country !== "") && <Weather city={city} country={country}/>}
-  
       </main>
       <footer>
-        <span>Simple weather App made in ReactJS by Kacper Dufrat</span>
+          <div>made by Kacper Dufrat</div>
       </footer>
-    </>
+    </div>
   );
 }
 

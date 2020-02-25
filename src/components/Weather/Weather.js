@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 
 const Weather = ({city, country}) => {
-    const [data, setData] = useState("");
+    const [data, setData] = useState(false);
 
 
     useEffect(() => {
@@ -22,8 +22,19 @@ const Weather = ({city, country}) => {
         })
     }, [city, country])
 
+    if (data === false) {
+        return <h1>Loading...</h1>
+    }
+
     return (
-        <h1>{data}</h1>
+        <>
+        <h2>{data.name}, {data.sys.country}</h2>
+        <div>{new Date().toLocaleDateString()}</div>
+        <div>IKONA POGODY</div>
+        <div>{data.main.temp}°C</div>
+        <div>{data.main.temp_min}°C {data.main.temp_max}°C</div>
+        <div>HUMIDITY: {data.main.humidity}% WIND: {data.wind.speed}m/s PRESSURE: {data.main.pressure}Pa</div>
+        </>
     )
 
 }

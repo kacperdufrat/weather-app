@@ -8,17 +8,34 @@ function App() {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
 
+  if (city !== "" && country !== "") {
+    return (
+      <div className="container">
+      <header>
+        <h1>Weather app</h1>
+      </header>
+      <main>
+        <CitySelection setCity={setCity} setCountry={setCountry} />
+        {(city !== "") && (country !== "") && <Weather city={city} country={country}/>}
+      </main>
+      <footer style={{display:"none"}}>
+        <div>made by Kacper Dufrat</div>
+      </footer>
+    </div>
+    )
+  }
+
   return (
     <div className="container">
       <header>
         <h1>Weather app</h1>
       </header>
       <main>
-        <CitySelection setCity={setCity} setCountry={setCountry}/>
+        <CitySelection setCity={setCity} setCountry={setCountry} />
         {(city !== "") && (country !== "") && <Weather city={city} country={country}/>}
       </main>
       <footer>
-          <div>made by Kacper Dufrat</div>
+        <div>made by Kacper Dufrat</div>
       </footer>
     </div>
   );

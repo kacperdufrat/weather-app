@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./Weather.scss";
+import { FaLongArrowAltDown, FaLongArrowAltUp, FaThermometerThreeQuarters } from 'react-icons/fa';
 
 const Weather = ({city, country}) => {
     const [data, setData] = useState(false);
@@ -31,10 +32,10 @@ const Weather = ({city, country}) => {
             <h2 className="weather-city">{data.name}, {data.sys.country}</h2>
             <div className="weather-date">{new Date().toLocaleDateString()}</div>
             <div className="weather-icon">IKONA POGODY</div>
-            <div className="weather-temp">{data.main.temp}°C</div>
+            <div className="weather-temp"><FaThermometerThreeQuarters className="temperature"/>{data.main.temp}°C</div>
             <div className="weather-temp__minmax">
-                <div className="weather-temp__min">{data.main.temp_min}°C</div>
-                <div className="weather-temp__max">{data.main.temp_max}°C</div>
+                <div className="weather-temp__min"><FaLongArrowAltDown className="arrow-down"/>{data.main.temp_min}°C</div>
+                <div className="weather-temp__max">{data.main.temp_max}°C<FaLongArrowAltUp className="arrow-up"/></div>
             </div>
         </div>
     )

@@ -11,16 +11,16 @@ form {
         border-radius: 3rem;
         width: 70%;
         padding: 0.5rem;
-        color: grey;
+        color: darkslategrey;
         text-align: center;
         font-family: 'Amatic SC', sans-serif;
         font-size: 2rem;
     }
     input:focus {
-        border: 0.1rem solid lightblue;
+        border: 0.1rem solid #397A4C;
     }
     input::placeholder {
-        color: lightgrey;
+        color: darkslategrey;
     }
     button {
         width: 50%;
@@ -30,7 +30,7 @@ form {
         margin: 0.2rem;
         font-size: 2rem;
         font-weight: 700;
-        background-color: lightblue;
+        background-color: #397A4C;
         font-family: 'Amatic SC', sans-serif;
         color: white;
         outline: none;

@@ -37,15 +37,22 @@ const Weather = ({city, country}) => {
         <div className="weather-container">
             <h2 className="weather-city">{data.name}, {data.sys.country}</h2>
             <div className="weather-date">{new Date().toLocaleDateString()}</div>
-            <div className="weather-icon"><img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="weather-icon"/></div>
-            <div className="weather-temp"><FaThermometerThreeQuarters className="temperature"/>{data.main.temp}°C</div>
+            <div className="weather-icon">
+                <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="weather-icon"/>
+            </div>
+            <div className="weather-temp">
+                <FaThermometerThreeQuarters className="temperature"/>{data.main.temp}°C
+            </div>
             <div className="weather-temp__minmax">
-                <div className="weather-temp__min"><FaLongArrowAltDown className="arrow-down"/>{data.main.temp_min}°C</div>
-                <div className="weather-temp__max">{data.main.temp_max}°C<FaLongArrowAltUp className="arrow-up"/></div>
+                <div className="weather-temp__min">
+                    <FaLongArrowAltDown className="arrow-down"/>{data.main.temp_min}°C
+                </div>
+                <div className="weather-temp__max">{data.main.temp_max}°C
+                    <FaLongArrowAltUp className="arrow-up"/>
+                </div>
             </div>
         </div>
     )
-
 }
 
 export default Weather;

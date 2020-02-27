@@ -7,9 +7,11 @@ const CitySelection = ({setCity, setCountry}) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        
         setCity(cityValue);
         setCountry(countryValue);
     }
+
 
     return (
         <form onSubmit={handleSubmit}>

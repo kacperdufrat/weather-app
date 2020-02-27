@@ -8,6 +8,8 @@ const Weather = ({city, country}) => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
+      setData(false);
+      setError(false);
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=198cd1c8a70a5ce116f0faa861a83524`)
         .then(response => {
             if (response.ok) {
@@ -25,13 +27,14 @@ const Weather = ({city, country}) => {
         })
     }, [city, country])
 
+    if (error === true) {
+        return <h1 className="loading">City not found</h1>
+    }
+
     if (data === false) {
         return <h1 className="loading">Loading...</h1>
     }
 
-    if (error === true) {
-        return <h1 className="loading">City not found</h1>
-    }
     
     return (
         <div className="weather-container">

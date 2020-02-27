@@ -11,14 +11,15 @@ body {
     flex-direction: column;
     align-items: center;
     header {
+      display: flex;
+      align-items: center;
       h1 {
-        margin: 1rem 0;
-        background-color: #397A4C;
-        border-radius: 3rem;
-        padding: 0.5rem 3rem;
-        color: white;
-        font-size: 3rem;
+        color: darkslategray;
+        font-size: 5rem;
         text-align: center;
+        @media (min-width: 450px) {
+          font-size: 6rem;
+        }
       }
     }
     footer {
@@ -36,17 +37,18 @@ body {
       .li-icon {
         margin: auto 1rem;
         &:hover {
-          color: #397A4C;
+          color: lightgreen;
           transition: 0.1s ease-in-out;
         }
       }
       .git-icon {
         margin: auto 0;
         &:hover {
-          color: #397A4C;
+          color: lightgreen;
           transition: 0.1s ease-in-out;
         }
       }
     }
   }
 }
+

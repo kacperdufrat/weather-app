@@ -15,6 +15,7 @@ form {
         text-align: center;
         font-family: 'Amatic SC', sans-serif;
         font-size: 2rem;
+        cursor: pointer;
     }
     input:focus {
         border: 0.1rem solid #397A4C;
@@ -34,5 +35,6 @@ form {
         font-family: 'Amatic SC', sans-serif;
         color: white;
         outline: none;
+        cursor: pointer;
     }
 }

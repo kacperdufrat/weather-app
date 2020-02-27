@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from "react";
 import "./Weather.scss";
 import { FaLongArrowAltDown, FaLongArrowAltUp, FaThermometerThreeQuarters } from 'react-icons/fa';
+import 'weather-icons/css/weather-icons.css';
 
 const Weather = ({city, country}) => {
     const [data, setData] = useState(false);
-
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=198cd1c8a70a5ce116f0faa861a83524`)
@@ -19,19 +20,24 @@ const Weather = ({city, country}) => {
             setData(data);
         })
         .catch(err => {
-            console.error("Pojawiły się błędy - " + err.message);
+            setError(true);
+            console.error("Pojawiły się błędy - " + err.message);   
         })
     }, [city, country])
 
     if (data === false) {
-        return <h1>Loading...</h1>
+        return <h1 className="loading">Loading...</h1>
     }
 
+    if (error === true) {
+        return <h1 className="loading">City not found</h1>
+    }
+    
     return (
         <div className="weather-container">
             <h2 className="weather-city">{data.name}, {data.sys.country}</h2>
             <div className="weather-date">{new Date().toLocaleDateString()}</div>
-            <div className="weather-icon">IKONA POGODY</div>
+            <div className="weather-icon"><img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="weather-icon"/></div>
             <div className="weather-temp"><FaThermometerThreeQuarters className="temperature"/>{data.main.temp}°C</div>
             <div className="weather-temp__minmax">
                 <div className="weather-temp__min"><FaLongArrowAltDown className="arrow-down"/>{data.main.temp_min}°C</div>

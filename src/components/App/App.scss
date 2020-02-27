@@ -24,9 +24,27 @@ body {
       }
     }
     footer {
+      display: flex;
       color: white;
       font-size: 2rem;
       margin-top: auto;
+      opacity: 0.8;
+      a {
+        display: flex;
+        text-decoration: none;
+        color: white;
+        opacity: 0.8;
+      }
+      .li-icon {
+        margin: auto 1rem;
+      }
+      .git-icon {
+        margin: auto 0;
+      }
     }
   }
 } 
+
+.cloud {
+  font-size: 3rem;
+}

@@ -13,8 +13,8 @@ Look up for a weather conditions such as temperature by:
 
 Technologies
 ---------------
-API used in that app:
-* OpenWeather - https://openweathermap.org/
+API used in app:
+* OpenWeather - [openweathermap.org](https://openweathermap.org/)
 
 Technologies:
 * React.js
@@ -22,9 +22,8 @@ Technologies:
 
 How to run it
 --------------
-* for start you need to create new environment by Create React App,
-* next you neet to clone this repo by typing `git clone`,
-* next install modules by typing `npm install`,
-* for start simply type `npm start` to run application,
-* to see app go to localhost:3000,
+* clone this repo by typing `git clone`,
+* install modules by typing `npm install`,
+* start by typing `npm start` to run application,
+* go to localhost:3000 to checkout app
 

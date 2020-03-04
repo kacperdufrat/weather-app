@@ -27,3 +27,7 @@ How to run it
 * start by typing `npm start` to run application,
 * go to localhost:3000 to checkout app
 
+OR
+
+* just run [DEMO]https://kacperdufrat.github.io/weather-app/
+

@@ -29,5 +29,5 @@ How to run it
 
 OR
 
-* just run [DEMO]https://kacperdufrat.github.io/weather-app/
+* just run [DEMO](https://kacperdufrat.github.io/weather-app/)
 

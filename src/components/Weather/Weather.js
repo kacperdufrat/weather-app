@@ -10,7 +10,7 @@ const Weather = ({city, country}) => {
     useEffect(() => {
       setData(false);
       setError(false);
-        fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=198cd1c8a70a5ce116f0faa861a83524`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=198cd1c8a70a5ce116f0faa861a83524`)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -41,7 +41,7 @@ const Weather = ({city, country}) => {
             <h2 className="weather-city">{data.name}, {data.sys.country}</h2>
             <div className="weather-date">{new Date().toLocaleDateString()}</div>
             <div className="weather-icon">
-                <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="weather-icon"/>
+                <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="weather-icon"/>
             </div>
             <div className="weather-temp">
                 <FaThermometerThreeQuarters className="temperature"/>{data.main.temp}°C
